@@ -1,5 +1,5 @@
-#In DevOps it is used for log analysis/processing
-#pip install beautifulsoup4
+# In DevOps it is used for log analysis/processing
+# pip install beautifulsoup4
 
 
 import urllib.request
@@ -15,7 +15,7 @@ class Scraper:
         r = urllib.request.urlopen(self.site)
         html = r.read()
         parser = "html.parser"
-        sp = BeautifulSoup(html,parser)
+        sp = BeautifulSoup(html, parser)
         print(sp)
         for tag in sp.find_all("a"):
             url = tag.get("href")
@@ -24,19 +24,21 @@ class Scraper:
             if "articles" in url:
                 print("\n" + url)
 
+
 news = "https://news.google.com/"
 Scraper(news).scrape()
 
 
-#Creating a class
+# Creating a class
 class cloud:
     def __init__(self, value):
         self.value = value
 
-#Method inside a class
+    # Method inside a class
     def hello(self):
         print(self.value)
 
-#calling aclass with method
-test="DevOps a gaya"
+
+# calling aclass with method
+test = "DevOps a gaya"
 cloud(test).hello()
